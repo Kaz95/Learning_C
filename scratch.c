@@ -33,6 +33,44 @@ main()
 	
 	if (!0)
 		printf("!0 Evaluates to True in C\n");
+	
+	// Switch statements are like if statements that test a single variable for multiple values.
+	// When the computer hits a switch statementm, it checks the value it was given, and then
+	// looks for a matching case. When it finds one, it runs all of the code that follows.
+	// The computer keeps going until it is told to break out of switch statement or statement ends.
+	// Most C programs have a break at the end of each case section to make the code easier to understand,
+	// even at the cost of efficiency.
+	
+	int train = 65;
+	int winnings = 0;
+	
+	switch(train) {
+	
+	case 37:
+
+		winnings = winnings + 50;
+		
+		break;
+
+	case 65:
+
+		puts("Jackpot!");
+
+		winnings = winnings + 80;
+
+	case 12:
+
+		winnings = winnings + 20;
+
+		break;
+	
+	default:
+
+		winnings = 0;
+
+	}
+
+	printf("Your total winnings are: %i\n", winnings);
 
 	return 0;
 }
