@@ -11,8 +11,19 @@
 // Anything that is not equal to 0 is treated as true.
 // If true can be used as a shorthand method for checking for non 0 values.
 
-main() 
+
+// Function that returns void(nothing)
+// Adds 1 to a given integer variable
+// Will be used to understand pointers
+void add_one(int *some_num)
 {
+	// Parenthesis are required to increment dereferenced pointer
+	(*some_num)++;
+}
+
+main() 
+{	
+	// Define and initialize an integer variable
 	int num = 5;
 	
 	// The && operator is efficient
@@ -71,6 +82,44 @@ main()
 	}
 
 	printf("Your total winnings are: %i\n", winnings);
+	
+	// 'While' loops decide how many times a block of will run
+	
+	int counter = 0;
+
+	while (counter < 3) {
+
+		printf("The current count is: %i\n", counter);
+		
+		counter++;
+	}
+
+	// C also has 'do while' loops. Loops will always execute atleast once.
+	
+	counter = 1;
+
+	do {
+		printf("This 'do while' will always run once.\nThe check doesn't happen until the end of each pass\n");
+
+	} while (counter == 2);
+	
+	// C also includes 'for' loops'.
+	// For loops provide an easy method for repeating a given piece of code multiple times.
+	
+	for (counter = 1; counter < 4; counter++) {
+
+		printf("The current count is %i\n", counter);
+	}
+	
+	int x = 4;
+
+	// If I don't use a pointer variable the add_one function will not work correctly
+	// C doesn't pass variable references like python, it copies the value of a given variable.
+	// Then assigns it to a new local variable.
+	add_one(&x);
+	
+	printf("x is equal to %i\n", x);
+
 
 	return 0;
 }
